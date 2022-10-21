@@ -27,10 +27,6 @@ public class QueueStack<T> {
             }
         }
 
-        if (s1.isEmpty() && s2.isEmpty()) {
-            return null;
-        }
-
         size--;
         return s2.pop();
     }
