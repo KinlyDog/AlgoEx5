@@ -17,7 +17,7 @@ public class QueueStack<T> {
     }
 
     public T dequeue() {
-        if (s1.isEmpty() && s2.isEmpty()) {
+        if (size() == 0) {
             return null;
         }
 
