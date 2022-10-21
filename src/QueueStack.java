@@ -26,10 +26,11 @@ public class QueueStack<T> {
             return s2.pop();
         }
 
-        return null;
+        return s2.pop();
     }
 
     public int size() {
         return size;
     }
+
 }
