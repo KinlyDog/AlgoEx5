@@ -11,23 +11,18 @@ public class QueueStack<T> {
     }
 
     public void enqueue(T item) {
-        while (!s1.isEmpty()) {
-            s2.push(s1.pop());
-        }
-
         s1.push(item);
-
-        while (!s2.isEmpty()) {
-            s1.push(s2.pop());
-        }
 
         size++;
     }
 
     public T dequeue() {
-        if (size() != 0) {
-            size--;
-            return s1.pop();
+        if (s2.isEmpty()) {
+            while (!s1.isEmpty()) {
+                s2.push(s1.pop());
+            }
+
+            return s2.pop();
         }
 
         return null;
