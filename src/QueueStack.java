@@ -21,16 +21,13 @@ public class QueueStack<T> {
             while (!s1.isEmpty()) {
                 s2.push(s1.pop());
             }
-
-            size--;
-            return s2.pop();
         }
 
+        size--;
         return s2.pop();
     }
 
     public int size() {
         return size;
     }
-
 }
