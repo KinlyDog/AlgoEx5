@@ -3,7 +3,6 @@ import java.util.Stack;
 public class QueueStack<T> {
     Stack<T> s1;
     Stack<T> s2;
-    int size = 0;
 
     public QueueStack() {
         s1 = new Stack<>();
@@ -12,8 +11,6 @@ public class QueueStack<T> {
 
     public void enqueue(T item) {
         s1.push(item);
-
-        size++;
     }
 
     public T dequeue() {
@@ -27,11 +24,10 @@ public class QueueStack<T> {
             }
         }
 
-        size--;
         return s2.pop();
     }
 
     public int size() {
-        return size;
+        return s1.size() + s2.size();
     }
 }
