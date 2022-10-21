@@ -11,37 +11,29 @@ public class QueueStack<T> {
     }
 
     public void enqueue(T item) {
+        while (!s1.isEmpty()) {
+            s2.push(s1.pop());
+        }
+
         s1.push(item);
 
-        while (s1.size() != 0) {
-            s2.push(s1.pop());
+        while (!s2.isEmpty()) {
+            s1.push(s2.pop());
         }
 
         size++;
     }
 
-/*    public T dequeue() {
+    public T dequeue() {
         if (size() != 0) {
             size--;
-            return list.removeFirst();
+            return s1.pop();
         }
 
         return null;
-    }*/
-
-    public int size() {
-        if (size != 0) {
-            return size;
-        }
-
-        return 0;
     }
 
-    public static void main(String[] args) {
-        QueueStack<Integer> qqq = new QueueStack<>();
-
-        for (int i = 0; i < 5; i++) {
-            qqq.enqueue(i);
-        }
+    public int size() {
+        return size;
     }
 }
