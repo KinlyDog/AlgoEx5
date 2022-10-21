@@ -17,10 +17,18 @@ public class QueueStack<T> {
     }
 
     public T dequeue() {
+        if (s1.isEmpty() && s2.isEmpty()) {
+            return null;
+        }
+
         if (s2.isEmpty()) {
             while (!s1.isEmpty()) {
                 s2.push(s1.pop());
             }
+        }
+
+        if (s1.isEmpty() && s2.isEmpty()) {
+            return null;
         }
 
         size--;
