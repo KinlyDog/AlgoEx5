@@ -22,6 +22,7 @@ public class QueueStack<T> {
                 s2.push(s1.pop());
             }
 
+            size--;
             return s2.pop();
         }
 
